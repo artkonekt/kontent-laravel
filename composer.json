@@ -16,7 +16,7 @@
     },
     "require": {
         "php": ">=5.5.9",
-        "konekt/kontent": "~0.1",
+        "konekt/kontent": "dev-master",
         "illuminate/support": "~5.0"
     },
     "autoload": {
