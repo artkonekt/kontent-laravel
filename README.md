@@ -40,7 +40,7 @@ php artisan vendor:publish --provider="Konekt\Kontent\Laravel\KontentServiceProv
 
 ### Edit Config
 
-Edit the packages's config file `app/konekt.php`:
+Edit the packages's config file `app/kontent.php`:
  
 Available options are:
 
