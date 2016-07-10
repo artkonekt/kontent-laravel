@@ -26,8 +26,20 @@ class CreateKontentTables extends Migration
             $table->dateTime('publish_at');
             $table->dateTime('hide_at');
             $table->integer('user_id')->nullable();
-            $table->char('lang', 2)->comment('ISO 639-1 language code');
-            $table->integer('translation_of')->nullable();
+
+            if (config('kontent.translation.enabled', false)) {
+                
+                // default language should be set in konent config file
+                // if not set, falls back to app.locale, which in turn defaults to 'en' if not set (that would be BAD)
+                $defLang = config('konent.translation.default', config('app.locale', 'en'));
+
+                $table->char('lang', 2)
+                    ->default($defLang)
+                    ->comment('ISO 639-1 language code');
+
+                $table->integer('translation_of')->nullable();
+            }
+
         });
     }
 
