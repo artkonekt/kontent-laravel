@@ -38,8 +38,24 @@ class KontentServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
+            __DIR__ . '/../config/config.php' => config_path('kontent.php')
+        ], 'config');
+
+        $this->publishes([
             __DIR__ . '/../database/migrations/' => database_path('migrations')
         ], 'migrations');
+    }
+
+    /**
+     * Returns the provided services
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            'kontent'
+        ];
     }
 
 }

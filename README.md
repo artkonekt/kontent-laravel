@@ -23,3 +23,9 @@ In the `config/app.php` configuration file, add to the provider array:
     Konekt\Kontent\Laravel\KontentServiceProvider::class,
 ],
 ```
+
+### Publish Files
+
+```bash
+php artisan vendor:publish --provider="Konekt\Kontent\Laravel\KontentServiceProvider"
+```
